@@ -1,32 +1,35 @@
 <template>
     <div id='psfuncionario'>
-        <h1>{{ gd }}</h1>
-         <h1>Salvar Funcionario</h1>
-        <input type="text" name="nome" placeholder="Nome" v-model="nome" /><br/>
+        
+         <h2>CADASTRAR FUNCIONARIO</h2>
+        <input type="text" name="nome" placeholder="Nome" v-model="nome" /><br/><br>
 
-        <input type="cpf" name="cpf" placeholder="CPF" v-model="cpf"/><br/>
-
-        <input type="password" name="senha" placeholder="Senha" v-model="senha"/><br/>
+        <input type="text" name="cpf" placeholder="Cpf" v-model="cpf"/><br><br>
+        
+        <input type="password" name="senha" placeholder="Senha" v-model="senha"/><br><br>
 
         <select v-model="tipo">
           <option v-for="opt in options" v-bind:key="opt.text" v-bind:value="opt.value">
             {{opt.text}}
           </option>
-        </select><br />
-
+        </select><br><br>
+     
         <select v-model="servico">
           <option v-for="serv in listServ" v-bind:value="serv.nome" v-bind:key="serv.id">
             {{serv.nome}}
           </option>
-        </select><br/>
-
+        </select><br><br>
+    
         <button type="button" v-on:click="salvar">Salvar</button>
     </div>
 </template>
 <script>
 import axios from 'axios';
+import {mapState} from 'vuex';
+
 export default {
     name: "funcionario",
+    computed:mapState(['token']),
     data(){
       return{
         gd:'FUNCIONARIO',
@@ -43,6 +46,14 @@ export default {
         }
     },
     created() {
+      if(this.token == null || this.token.split('-')[0] != 'aaaaa.bbbbb.ccccc'){
+        if(this.token == null){
+          alert('precisa estar logado.');
+        }else{
+          alert('voce nao tem permissao a esta pagina.');
+        }
+        this.$router.push('/')
+      }
       axios.get('servico/getAll', 
       {headers: { Accept: 'application/json'}})
       .then(res => {
@@ -73,12 +84,5 @@ export default {
 }
 </script>
 <style>
-#psfuncionario {
-        width: 500px;
-        border: 1px solid #CCCCCC;
-        background-color: #FFFFFF;
-        margin: auto;
-        margin-top: 200px;
-        padding: 20px;
-    }
+
 </style>

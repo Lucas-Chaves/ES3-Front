@@ -2,16 +2,11 @@
 <div>
   <div class="login">
     <h2>LOGIN</h2>
-        <input type="text" name="cpf" placeholder="Cpf" v-model="cpf"/><br><br>
+        <input type="text" name="login" placeholder="login" v-model="login"/><br><br>
         <input type="password" name="senha" placeholder="Senha" v-model="senha"/><br><br>
         <button type="button" v-on:click="logar">Login</button>
   </div>
   <br><br>
-  <div class="menu">
-    <h2>AGENDE SEU HORARIO</h2>
-         <h3> <router-link to='/agenda'>AGENDAR</router-link></h3>
-
-  </div>
 </div>
 </template>
 
@@ -22,7 +17,7 @@ export default {
   name: 'login',
   data() {
     return {
-      cpf:'',
+      login:'',
       senha:''
     };
   },
@@ -31,24 +26,27 @@ export default {
       'setToken',
     ]),
     logar: function() {
-      axios.post('funcionario/login',
+      alert('button clicked')
+      axios.post('/oauth/login',
       {headers: {
         Accept: 'application/json',
         'Access-Control-Allow-Origin': '*'
       },
-       cpf:this.cpf,
-       senha:this.senha})
+       email:this.login,
+       password:this.senha})
       .then(res => {
-        if(res.status === 200){ 
-          this.setToken(res.headers.token);
-          if(res.headers.token.split('-')[0] === 'xxxxx.yyyyy.zzzzz'){
-            this.$router.push('/listahorario');
-          }
+        if(res.status === 200){
+          alert(res.data.token)
+          this.setToken(res.data.token);
+          this.$router.push(`/listahorario`)
+          // if(res.headers.token.split('-')[0] === 'xxxxx.yyyyy.zzzzz'){
+          //   this.$router.push('/listahorario');
+          // }
         }
       })
       .catch(error => {
-        if(error.response.status === 400) alert('Usuario não encontrado')
-        if(error.response.status === 404) alert('Senha incorreta ')
+        if(error.response.status === 505) alert('Error Interno')
+        if(error.response.status === 401) alert('Senha incorreta')
       })
     }
   }

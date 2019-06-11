@@ -7,7 +7,7 @@ import axios from 'axios';
 import store from './store';
 
 Vue.config.productionTip = false;
-axios.defaults.baseURL = 'http://localhost:8081/atividade4'
+axios.defaults.baseURL = 'http://localhost:3500/api';
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

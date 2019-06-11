@@ -5,8 +5,9 @@ import Login from '@/components/Login.vue';
 import Cadastro from '@/components/CadastroFunc.vue';
 import Servico from '@/components/CadastroServico.vue';
 import Agenda from '@/components/Agenda.vue';
+import { mapState } from 'vuex';
+
 Vue.use(Router);
-import {mapState} from 'vuex';
 
 export default new Router({
   routes: [
@@ -16,25 +17,25 @@ export default new Router({
       component: ListaHorario,
     },
     {
-      path:'/',
-      name:'login',
-      component:Login
+      path: '/',
+      name: 'login',
+      component: Login,
     },
     {
-      path:'/funcionario',
+      path: '/funcionario',
       name: 'cadastro de funcionario',
-      component: Cadastro
+      component: Cadastro,
     },
     {
-      path:'/servico',
-      name:'cadastro de servicos',
+      path: '/servico',
+      name: 'cadastro de servicos',
       component: Servico,
     },
     {
-      path:'/agenda',
-      name:'agendamento de horario',
+      path: '/agenda',
+      name: 'agendamento de horario',
       component: Agenda,
-    }
+    },
 
   ],
 });

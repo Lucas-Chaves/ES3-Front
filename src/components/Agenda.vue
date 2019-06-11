@@ -24,6 +24,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import axios from 'axios';
 import Funcionario_servico from './Funcionario_Servico'
@@ -81,6 +82,7 @@ export default {
     }
 }
 </script>
+
 <style>
 
 </style>

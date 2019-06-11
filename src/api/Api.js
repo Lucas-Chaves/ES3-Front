@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from 'axios';
 
 const instance = ({ baseURL, noHeaders, options, headers, checkExpiredSession = true } = {}) => {
   const SESSION_TOKEN = undefined // sessionStorage.getItem(`token`)
@@ -15,7 +15,7 @@ const instance = ({ baseURL, noHeaders, options, headers, checkExpiredSession = 
   }
 
   const newInstance = axios.create({
-    baseURL: baseURL || API_URL,
+    baseURL: baseURL || "http://127.0.0.1/",
     headers: generateHeaders(),
     ...options
   })
@@ -24,20 +24,12 @@ const instance = ({ baseURL, noHeaders, options, headers, checkExpiredSession = 
     return response
   }, error => {
     if (checkExpiredSession && ErrorUtils.isExpiredSession(error)) {
-
-      // store.dispatch('Auth/setToken', undefined)
-      // store.commit('SignUp/setStep', { noRedirect: true, step: 1 })
-      window.removeSession()
-
       swal({
         title: 'Session expired!',
         type: 'warning',
         showConfirmButton: true,
         confirmButtonText: 'OK'
-      }).then(r => {
-        window.location.replace('/conta/entrar')
       })
-
     }
 
     return Promise.reject(error)

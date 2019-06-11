@@ -66,7 +66,7 @@ export default new Router({
       component: Imc,
     },
     {
-      path: '/Usuario',
+      path: '/usuario',
       name: 'tela do usuario',
       component: Usuario,
     },

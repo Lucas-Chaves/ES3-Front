@@ -2,7 +2,8 @@
   <div id="app">
     <div id='links'>
       
-      <router-link to="/imc">imc do usuario</router-link>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      <router-link to="/usuario">Usuarios</router-link>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      <router-link to="/imc">IMC</router-link>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
       <router-link to="/alimentos">alimentos</router-link>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
       <router-link to="/grupo">grupo de alimentos</router-link>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
       <router-link to="/receita">receitas</router-link>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp

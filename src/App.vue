@@ -3,9 +3,7 @@
     <div id='links'>
       
       <router-link to="/listahorario">LISTA DE HORARIOS</router-link>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-      <router-link to="/">LOGIN</router-link>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-      <router-link to="/funcionario">FUNCIONARIO</router-link>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-      <router-link to='/servico'>SERVICO</router-link>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      
       <a v-if="token" @click="logout">Logout</a>
 
     </div>

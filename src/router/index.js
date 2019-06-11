@@ -1,17 +1,17 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import ListaHorario from '@/components/ListaHorario.vue';
-import Login from '@/components/Login.vue';
-import Cadastro from '@/components/CadastroFunc.vue';
-import Servico from '@/components/CadastroServico.vue';
-import Agenda from '@/components/Agenda.vue';
-import Imc from '@/components/Imc.vue';
-import Alimentos from '@/components/Alimentos.vue';
-import Grupo from '@/components/Grupo.vue';
-import Usuario from '@/components/Usuario.vue';
-import Receita from '@/components/Receita.vue';
-import Ingredientes from '@/components/Ingredientes.vue';
-import Combinacao from '@/components/Combinacao.vue';
+import ListaHorario from '@/components/ListaHorario';
+import Login from '@/components/Login';
+import Cadastro from '@/components/CadastroFunc';
+import Servico from '@/components/CadastroServico';
+import Agenda from '@/components/Agenda';
+import Imc from '@/components/Imc';
+import Alimentos from '@/components/Alimentos';
+import Grupo from '@/components/Grupo';
+import Usuario from '@/components/Usuario';
+import Receita from '@/components/Receita';
+import Ingredientes from '@/components/Ingredientes';
+import Combinacao from '@/components/Combinacao';
 
 
 import { mapState } from 'vuex';

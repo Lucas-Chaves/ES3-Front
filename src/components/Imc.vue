@@ -25,7 +25,6 @@
           headers: {
             Authorization: `Bearer ${this.token}`
           },
-          idUser: 1,
           valorImc: imc
         })
         .then(resp => {

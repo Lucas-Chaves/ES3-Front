@@ -29,7 +29,7 @@
           description: this.desc
         })
         .then(resp => {
-          if(resp.status === 201 || resp.status === 200 ) alert(' grupo criado com sucesso !');
+          if(resp.status === 201 || resp.status === 200 ) alert('grupo criado com sucesso !');
         })
         .catch(error => {
           alert(error.response)

@@ -66,7 +66,7 @@ export default new Router({
       component: Imc,
     },
     {
-      path: '/Usuario',
+      path: '/usuario',
       name: 'tela do usuario',
       component: Usuario,
     },
@@ -76,7 +76,7 @@ export default new Router({
       component: Receita,
     },
     {
-      path: '/Ingredientes',
+      path: '/ingredientes',
       name: 'ingredientes de alimentos',
       component: Ingredientes,
     },

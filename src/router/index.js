@@ -76,7 +76,7 @@ export default new Router({
       component: Receita,
     },
     {
-      path: '/Ingredientes',
+      path: '/ingredientes',
       name: 'ingredientes de alimentos',
       component: Ingredientes,
     },

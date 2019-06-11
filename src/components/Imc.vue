@@ -21,17 +21,17 @@
     methods: {
       salvarImc: function() {
         const imc = parseInt(this.pso)/(parseInt(this.alt) * parseInt(this.alt));
-        axios.post('/imc', {
+        axios.post('/imc', { valorImc: imc }, {
           headers: {
             Authorization: `Bearer ${this.token}`
           },
-          valorImc: imc
         })
         .then(resp => {
           if (resp.status === 201) alert('imc criado com sucesso !');
         })
         .catch(error => {
-          alert(error.response.data);
+          if(error.response.status === 505) alert('erro interno');
+          console.error(error)
         })
       }
     }
